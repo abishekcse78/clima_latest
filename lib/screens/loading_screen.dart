@@ -16,6 +16,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
           await Geolocator.requestPermission();
       Position position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high);
+      print(position);
     } catch (e) {
       print(e);
     }
@@ -29,15 +30,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: TextButton(
-          onPressed: () async {
-            await getLocation();
-          },
-          child: const Text('Get Location'),
-        ),
-      ),
+    return const Scaffold(
+      body: Center(),
     );
   }
 }
